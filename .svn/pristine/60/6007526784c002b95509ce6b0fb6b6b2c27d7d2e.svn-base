@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="js/md5.js"></script>
+<head>
+</head>
+<body>
+
+<script>
+
+	var realm;
+	var nonce;
+	var opaque;
+	var response;
+	var qop;
+	var algorithm;
+	
+	$.ajax({
+	  		 type: "GET",
+	 		 url: "http://requestb.in/1fc703m1", 
+	  		beforeSend : function(xhrObj) {
+				xhrObj.setRequestHeader('Authorization','Digest username="testuser", realm="EXCEEDVOTE", nonce="cAcWvT9SUFVg77mWzGe/bUSzx0T00dgw", uri="/", algorithm=MD5, response="f957c8b147898deb3ff3a0ec8f4e87b1", qop=auth, nc=00000001, cnonce="443ba9958bc3891d"');
+			 },
+	    	 success : function(){
+	    	 	alert("suc");	
+	    	 },
+	    	 error : function (request, textStatus, errorThrown) {
+	    	 	alert(request.getAllResponseHeaders());
+	    	 	alert(errorThrown);
+	    	 	
+	    	 }
+	  });
+
+</script>
+
+</body>
+</html>

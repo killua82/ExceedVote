@@ -1,0 +1,80 @@
+{
+  "rank": {
+    "criterion": {
+      "criteria": [
+        {
+          "-name": "criteria1",
+          "-description": "aaaa1",
+          "teams": {
+            "team": [
+              {
+                "-name": "team1",
+                "-description": "tttttttt"
+              },
+              {
+                "-name": "team1",
+                "-description": "tttttttt"
+              },
+              {
+                "-name": "team1",
+                "-description": "tttttttt"
+              },
+              {
+                "-name": "team1",
+                "-description": "tttttttt"
+              }
+            ]
+          }
+        },
+        {
+          "-name": "criteria2",
+          "-description": "aaaa2",
+          "teams": {
+            "team": [
+              {
+                "-name": "team1",
+                "-description": "tttttttt"
+              },
+              {
+                "-name": "team1",
+                "-description": "tttttttt"
+              },
+              {
+                "-name": "team1",
+                "-description": "tttttttt"
+              },
+              {
+                "-name": "team1",
+                "-description": "tttttttt"
+              }
+            ]
+          }
+        },
+        {
+          "-name": "criteria3",
+          "-description": "aaaa3",
+          "teams": {
+            "team": [
+              {
+                "-name": "team1",
+                "-description": "tttttttt"
+              },
+              {
+                "-name": "team1",
+                "-description": "tttttttt"
+              },
+              {
+                "-name": "team1",
+                "-description": "tttttttt"
+              },
+              {
+                "-name": "team1",
+                "-description": "tttttttt"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

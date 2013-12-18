@@ -1,0 +1,31 @@
+
+     var id = window.localStorage.getItem("id");
+     var name = window.localStorage.getItem("name");
+     window.localStorage.removeItem("id");
+     window.localStorage.removeItem("name");
+     
+     $.get('https://api.github.com/users/mralexgray/repos').then(loaded);
+     function loaded(x) {
+        // data.forEach(function(x) {
+             var title = $('<h4 class="list-group-item-heading"> </h4>');
+             title.attr({
+                 id: x[0].id,
+                 name: x[0].name
+             });
+             title.html(x[0].owner.login);
+             var des = $('<p class="list-group-item-text"> </p>');
+             des.html(x[0].owner.gravatar_id);
+             var group = $('<div class="list-group-item"> </div>');
+             var button = $('<button type="button" id="vote" class="btn btn-default navbar-btn">Vote</button>');
+             group.append(title);
+             group.append(des);
+             group.append(button);
+             $('.list-group').append(group);
+         //});
+     }
+    
+     $('#criteriaName').append(name);
+     
+     $( document ).on( "click", "#vote", function(e) {
+       alert("Success");
+     });
