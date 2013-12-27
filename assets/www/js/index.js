@@ -38,5 +38,14 @@ var app = {
             window.location = 'myvote.html';
         });  
         
+        $( "#guestLogin" ).click(function() {
+            username = "Guest";
+            // Save data to the current session's store
+            sessionStorage.setItem("username", username);
+          //rediect to digest auth
+            
+            window.location = 'preEmptive.html';
+        }); 
+        
     }
 };

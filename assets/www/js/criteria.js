@@ -1,13 +1,13 @@
 var username = sessionStorage.getItem("username");
 $("#signed").append(username);
+//$.get('http://10.0.2.2:8080/exceedvote/api/v1/criterion').then(loaded);
 
 if (username === "Guest") {
     $("#votemenu").addClass('disabled').children().attr('href', '#');
 }
-//$.get('http://10.0.2.2:8080/exceedvote/api/v1/contestant').then(loaded);
 
 $.ajax({
-    url : "http://10.0.2.2:8080/exceedvote/api/v1/contestant",
+    url : "http://10.0.2.2:8080/exceedvote/api/v1/criterion",
     type : 'GET',
     error : errorHand(XMLHttpRequest, textStatus, errorThrown),
     success : loaded(data)
@@ -15,16 +15,16 @@ $.ajax({
 
 function loaded(data) {
     data.forEach(function(x) {
-        var name = $('<h4 class="list-group-item-heading"> </h4>');
-        name.html(x[0].name);
-        name.attr({
-            id : x[0].id
+        var question = $('<h4 class="list-group-item-heading"> </h4>');
+        question.html(x[0].question);
+        question.attr({
+            id : x[0].id,
+            type : x[0].type
         });
-        var des = $('<p class="list-group-item-text"> </p>');
-        des.html(x[0].description);
+
         var group = $('<div class="list-group-item"> </div>');
-        group.append(name);
-        group.append(des);
+        group.append(question);
+
         $('.list-group').append(group);
     });
 }
@@ -32,3 +32,4 @@ function loaded(data) {
 function errorHand(XMLHttpRequest, textStatus, errorThrown){
     alert('status:' + XMLHttpRequest.status + ', status text: ' + XMLHttpRequest.statusText);
 }
+
