@@ -17,9 +17,9 @@ function errorHand(XMLHttpRequest, textStatus, errorThrown){
 }
 
 function loaded(data) {
-    data.myvote.votes.forEach(function(x) {
+    data.myvote.votes.vote.forEach(function(x) {
         
-        var criQuestion = getCri(x[0].criterion.id);
+        var criQuestion = getCri(x.criterion.id);
         
         var head = $('<h4 class="list-group-item-heading"> </h4>');
         head.html(criQuestion);
@@ -27,14 +27,14 @@ function loaded(data) {
             id : x[0].criterion.id
         });
         
-        var conName = getCon(x[0].contestant.id);
+        var conName = getCon(x.contestant.id);
         var des = $('<p class="list-group-item-text"> </p>');
         des.html("Team: "+conName);
         des.attr({
-            id : x[0].contestant.id
+            id : x.contestant.id
         });
         var score = $('<p class="list-group-item-text"> </p>');
-        score.html("Score: "+x[0].contestant.score)
+        score.html("Score: "+x.contestant.score)
 
         var group = $('<div class="list-group-item"> </div>');
         group.append(head);

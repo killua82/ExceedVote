@@ -14,12 +14,12 @@ $.ajax({
 });
 
 function loaded(data) {
-    data.forEach(function(x) {
+    data.criteria.criterion.forEach(function(x) {
         var question = $('<h4 class="list-group-item-heading"> </h4>');
-        question.html(x[0].question);
+        question.html(x.question);
         question.attr({
-            id : x[0].id,
-            type : x[0].type
+            id : x.id,
+            type : x.type
         });
 
         var group = $('<div class="list-group-item"> </div>');

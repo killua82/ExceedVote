@@ -14,14 +14,14 @@ $.ajax({
 });
 
 function loaded(data) {
-    data.forEach(function(x) {
+    data.contestants.contestant.forEach(function(x) {
         var name = $('<h4 class="list-group-item-heading"> </h4>');
-        name.html(x[0].name);
+        name.html(x.name);
         name.attr({
-            id : x[0].id
+            id : x.id
         });
         var des = $('<p class="list-group-item-text"> </p>');
-        des.html(x[0].description);
+        des.html(x.description);
         var group = $('<div class="list-group-item"> </div>');
         group.append(name);
         group.append(des);

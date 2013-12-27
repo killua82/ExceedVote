@@ -9,13 +9,13 @@ $.ajax({
 });
 
 function loaded(data) {
-    data.forEach(function(x) {
+    data.criteria.criterion.forEach(function(x) {
         var question = $('<a class="list-group-item-heading"> </a>');
-        question.html(x[0].question);
+        question.html(x.question);
         question.attr({
-            question : x[0].question,
-            id : x[0].id,
-            type : x[0].type
+            question : x.question,
+            id : x.id,
+            type : x.type
         });
 
         var group = $('<div class="list-group-item"> </div>');
