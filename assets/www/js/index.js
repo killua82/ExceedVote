@@ -44,7 +44,7 @@ var app = {
             sessionStorage.setItem("username", username);
           //rediect to digest auth
             
-            window.location = 'preEmptive.html';
+            window.location = 'myvote.html';
         }); 
         
     }
